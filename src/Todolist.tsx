@@ -7,7 +7,11 @@ import { Delete } from '@mui/icons-material';
 import { Task } from './Task'
 import { FilterValuesType } from './App';
 
-
+export type TaskType = {
+    id: string
+    title: string
+    isDone: boolean
+}
 
 type PropsType = {
     id: string
