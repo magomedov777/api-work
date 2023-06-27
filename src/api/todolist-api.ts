@@ -12,7 +12,9 @@ export const TodolistApi = {
   createTodolists(title: string) {
     return instance.post<ResponseType<{item: TodolistType}>>("todo-lists", { title });
   },
-  
+  deleteTodolists(id: string) {
+    return instance.delete<ResponseType>(`todo-lists/${id}`);
+  },
   
 };
 
