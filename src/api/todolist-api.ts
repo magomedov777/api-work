@@ -27,5 +27,10 @@ type TodolistType = {
   order: number
 };
 
-
+type ResponseType<T = {}> = {
+  resultCode: number;
+  fieldsError: []
+  messages: string[]
+  data: T
+};
 
