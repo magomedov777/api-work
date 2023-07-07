@@ -70,7 +70,9 @@ export const TodolistApi = {
     deleteTask(id: string, taskId: string) {
       return instance.delete<TasksResponseType>(`todo-lists/${id}/tasks/${taskId}`)
       },
-     
+      updateTask(id: string, taskId: string, title: string) {
+        return instance.put<UpdateTaskType>(`todo-lists/${id}/tasks/${taskId}`, { title })
+        },
   
 };
 
