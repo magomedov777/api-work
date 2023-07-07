@@ -41,7 +41,11 @@ type UpdateTaskType = {
   deadline: string
 }
 
-
+type TasksResponseType = {
+  error: string | null
+  totalCount: string
+  items: TaskType[]
+}
 
 
 export const TodolistApi = {
