@@ -62,6 +62,7 @@ export const DeleteTodolist = () => {
              setState(res.data)
             })
         }, [])
+        return <div>{JSON.stringify(state)}</div>
      }
 
      export const CreateTasks = () => {
