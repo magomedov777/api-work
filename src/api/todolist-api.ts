@@ -32,14 +32,7 @@ type TaskType = {
   addedDate: string
 }
 
-type UpdateTaskType = {
-  description: string
-  title: string
-  status: number
-  priority: number
-  startDate: string
-  deadline: string
-}
+
 
 type TasksResponseType = {
   error: string | null
