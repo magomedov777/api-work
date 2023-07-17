@@ -75,10 +75,7 @@ function App() {
         dispatch(action);
     }, []);
 
-    const addTodolist = useCallback((title: string) => {
-        const action = addTodolistAC(title);
-        dispatch(action);
-    }, [dispatch]);
+   
 
     return (
         <div className="App">
