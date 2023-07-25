@@ -13,6 +13,7 @@ export const GetTodolists = () => {
         setState(res.data)
        })
    }, [])
+   return <div>{JSON.stringify(state)}</div>
 }
 
 export const CreateTodolist = () => {
