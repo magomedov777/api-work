@@ -5,12 +5,7 @@ const instance = axios.create({
   withCredentials: true,
 });
 
-type TodolistType = {
-  id: string
-  title: string
-  addedDate: Date
-  order: number
-};
+
 
 type ResponseType<T = {}> = {
   resultCode: number;
