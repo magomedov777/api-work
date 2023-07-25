@@ -5,7 +5,16 @@ export default {
    title: 'API'
 }
 
-
+export const GetTodolists = () => {
+   const [state, setState] = useState<any>(null)
+   useEffect(() => {
+      const promise = TodolistApi.getTodolists() 
+      promise.then((res) => {
+        setState(res.data)
+       })
+   }, [])
+   return <div>{JSON.stringify(state)}</div>
+}
 
 export const CreateTodolist = () => {
     const [state, setState] = useState<any>(null)
