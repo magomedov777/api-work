@@ -1,21 +1,21 @@
-import React, { ChangeEvent, KeyboardEvent, useState } from 'react';
+import React, { ChangeEvent, FC, KeyboardEvent, useState } from 'react';
 import TextField from '@mui/material/TextField';
 import IconButton from '@mui/material/IconButton';
 import { AddBox } from '@mui/icons-material';
 
-type AddItemFormPropsType = {
+type Props = {
     addItem: (title: string) => void
 }
 
-export const AddItemForm = React.memo(function (props: AddItemFormPropsType) {
+export const AddItemForm: FC<Props> = React.memo(function ({ addItem }) {
     console.log('AddItemForm called')
 
     let [title, setTitle] = useState('')
     let [error, setError] = useState<string | null>(null)
 
-    const addItem = () => {
+    const addItemCallback = () => {
         if (title.trim() !== '') {
-            props.addItem(title);
+            addItem(title);
             setTitle('');
         } else {
             setError('Title is required');
@@ -31,21 +31,21 @@ export const AddItemForm = React.memo(function (props: AddItemFormPropsType) {
             setError(null);
         }
         if (e.charCode === 13) {
-            addItem();
+            addItemCallback();
         }
     }
 
     return <div>
         <TextField variant="outlined"
-                   error={!!error}
-                   value={title}
-                   onChange={onChangeHandler}
-                   onKeyPress={onKeyPressHandler}
-                   label="Title"
-                   helperText={error}
+            error={!!error}
+            value={title}
+            onChange={onChangeHandler}
+            onKeyPress={onKeyPressHandler}
+            label="Title"
+            helperText={error}
         />
-        <IconButton color="primary" onClick={addItem}>
-            <AddBox/>
+        <IconButton color="primary" onClick={addItemCallback}>
+            <AddBox />
         </IconButton>
     </div>
 })
