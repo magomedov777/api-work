@@ -80,7 +80,6 @@ const App: FC = memo(() => {
 
     return (
         <div className="App">
-
             <AppBar position="static">
                 <Toolbar>
                     <IconButton edge="start" color="inherit" aria-label="menu">
