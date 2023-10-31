@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { FC, memo, useCallback } from 'react'
 import './App.css';
 import { TaskType, Todolist } from './Todolist';
 import { AddItemForm } from './AddItemForm';
@@ -34,8 +34,7 @@ export type TasksStateType = {
 }
 
 
-function App() {
-
+const App: FC = memo(() => {
     const todolists = useSelector<AppRootStateType, Array<TodolistType>>(state => state.todolists)
     const tasks = useSelector<AppRootStateType, TasksStateType>(state => state.tasks)
     const dispatch = useDispatch();
@@ -86,7 +85,7 @@ function App() {
             <AppBar position="static">
                 <Toolbar>
                     <IconButton edge="start" color="inherit" aria-label="menu">
-                        <Menu/>
+                        <Menu />
                     </IconButton>
                     <Typography variant="h6">
                         News
@@ -95,8 +94,8 @@ function App() {
                 </Toolbar>
             </AppBar>
             <Container fixed>
-                <Grid container style={{padding: '20px'}}>
-                    <AddItemForm addItem={addTodolist}/>
+                <Grid container style={{ padding: '20px' }}>
+                    <AddItemForm addItem={addTodolist} />
                 </Grid>
                 <Grid container spacing={3}>
                     {
@@ -104,7 +103,7 @@ function App() {
                             let allTodolistTasks = tasks[tl.id];
 
                             return <Grid item key={tl.id}>
-                                <Paper style={{padding: '10px'}}>
+                                <Paper style={{ padding: '10px' }}>
                                     <Todolist
                                         id={tl.id}
                                         title={tl.title}
@@ -126,6 +125,6 @@ function App() {
             </Container>
         </div>
     );
-}
+})
 
 export default App;
