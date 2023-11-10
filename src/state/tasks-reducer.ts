@@ -2,32 +2,9 @@ import { TaskType } from "../Todolist";
 import { v1 } from "uuid";
 import { AddTodolistActionType, RemoveTodolistActionType } from "./todolists-reducer";
 import { TasksStateType } from "../App";
+import { AddTaskActionType, ChangeTaskStatusActionType, ChangeTaskTitleActionType, RemoveTaskActionType } from "./tasks.types";
 
-export type RemoveTaskActionType = {
-  type: "REMOVE-TASK";
-  todolistId: string;
-  taskId: string;
-};
 
-export type AddTaskActionType = {
-  type: "ADD-TASK";
-  todolistId: string;
-  title: string;
-};
-
-export type ChangeTaskStatusActionType = {
-  type: "CHANGE-TASK-STATUS";
-  todolistId: string;
-  taskId: string;
-  isDone: boolean;
-};
-
-export type ChangeTaskTitleActionType = {
-  type: "CHANGE-TASK-TITLE";
-  todolistId: string;
-  taskId: string;
-  title: string;
-};
 
 type ActionsType =
   | RemoveTaskActionType
