@@ -5,7 +5,7 @@ import IconButton from '@mui/material/IconButton';
 import Checkbox from '@mui/material/Checkbox';
 import { TaskType } from './Todolist'
 
-type TaskPropsType = {
+type Props = {
     task: TaskType
     todolistId: string
     changeTaskStatus: (id: string, isDone: boolean, todolistId: string) => void
@@ -31,9 +31,9 @@ export const Task = React.memo((props: TaskPropsType) => {
             onChange={onChangeHandler}
         />
 
-        <EditableSpan value={props.task.title} onChange={onTitleChangeHandler}/>
+        <EditableSpan value={props.task.title} onChange={onTitleChangeHandler} />
         <IconButton onClick={onClickHandler}>
-            <Delete/>
+            <Delete />
         </IconButton>
     </div>
 })
